@@ -169,19 +169,25 @@ All 48 participating squads represented by the FBref squad goalkeeping dataset.
 
 ### Descriptive Statistics
 
-[To be defined.]
+| Progression group | n | Mean Save% | Median | Standard deviation | Minimum | Maximum | Q1 | Q3 | IQR |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Progressed | 32 | 67.99 | 69.80 | 12.57 | 42.90 | 90.90 | 58.67 | 77.12 | 18.45 |
+| Group-stage eliminated | 16 | 58.53 | 58.95 | 13.91 | 33.30 | 83.30 | 50.00 | 67.28 | 17.28 |
+
+The observed difference in group means (Progressed mean minus Group-stage eliminated mean) was 9.46 percentage points. A boxplot and histogram were created for visual exploration of Save% by progression group.
 
 ### Confidence Interval
 
-[To be defined.]
+Not yet completed.
 
 ### Hypothesis Test
 
-[To be defined.]
+Not yet completed.
 
 ### Assumptions
 
-[To be checked before inferential analysis.]
+- No 1.5 × IQR outliers were detected in either group.
+- Distributional assumptions still need to be assessed before inferential analysis.
 
 ### Interpretation
 
