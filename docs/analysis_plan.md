@@ -178,7 +178,14 @@ The observed difference in group means (Progressed mean minus Group-stage elimin
 
 ### Confidence Interval
 
-Not yet completed.
+The 95% t confidence intervals for the group mean Save% values were:
+
+| Progression group | Mean Save% | Standard error | Degrees of freedom | 95% confidence interval |
+| --- | ---: | ---: | ---: | ---: |
+| Progressed | 67.99 | 2.22 | 31 | [63.46, 72.52] |
+| Group-stage eliminated | 58.53 | 3.48 | 15 | [51.12, 65.94] |
+
+For the difference in means (Progressed minus Group-stage eliminated), the standard error was calculated using `sqrt((s1^2 / n1) + (s2^2 / n2))`. The observed difference was 9.46 percentage points, the standard error was 4.13, and the 95% confidence interval was [0.67, 18.26] percentage points. The degrees of freedom were `min(n1 - 1, n2 - 1) = min(31, 15) = 15`, following the Week 4 conservative smaller-sample-degrees-of-freedom approach.
 
 ### Hypothesis Test
 
@@ -187,7 +194,9 @@ Not yet completed.
 ### Assumptions
 
 - No 1.5 × IQR outliers were detected in either group.
-- Distributional assumptions still need to be assessed before inferential analysis.
+- Skewness was mild in both groups: -0.22 for Progressed teams and -0.12 for group-stage-eliminated teams.
+- The simple random sampling condition was not satisfied / not applicable because the dataset contains all 48 participating 2026 FIFA World Cup teams rather than teams selected through a simple random sampling procedure.
+- Inference should therefore be interpreted cautiously and in the context of the 2026 FIFA World Cup teams.
 
 ### Interpretation
 
