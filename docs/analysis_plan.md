@@ -142,23 +142,28 @@
 
 ### Analytic Question
 
-[To be defined.]
+Do teams that progressed beyond the group stage have a higher mean goalkeeper save percentage than teams eliminated in the group stage?
 
 ### Population
 
-[To be defined.]
+Teams participating in the 2026 FIFA World Cup.
 
 ### Sample
 
-[To be defined.]
+The 48 participating teams represented by the FBref squad goalkeeping dataset.
 
 ### Variables
 
-[To be defined.]
+- Grouping variable: tournament progression status (progressed beyond group stage vs eliminated in group stage) — classification still to be added.
+- Numerical variable: goalkeeper save percentage (overall Performance Save%).
 
 ### Data Wrangling
 
-[To be defined.]
+- Parse the two-row FBref CSV header.
+- Distinguish overall Save% from penalty-kick Save%.
+- Clean squad names.
+- Retain required goalkeeping variables.
+- Tournament progression classification still required.
 
 ### Descriptive Statistics
 
@@ -174,7 +179,7 @@
 
 ### Assumptions
 
-[To be defined.]
+To be checked after tournament progression groups are created.
 
 ### Interpretation
 
