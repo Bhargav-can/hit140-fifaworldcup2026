@@ -150,20 +150,22 @@ Teams participating in the 2026 FIFA World Cup.
 
 ### Sample
 
-The 48 participating teams represented by the FBref squad goalkeeping dataset.
+All 48 participating squads represented by the FBref squad goalkeeping dataset.
 
 ### Variables
 
-- Grouping variable: tournament progression status (progressed beyond group stage vs eliminated in group stage) — classification still to be added.
+- Grouping variable: `ProgressionStatus` (Progressed vs Group-stage eliminated), based on FIFA Round of 32 membership.
 - Numerical variable: goalkeeper save percentage (overall Performance Save%).
 
 ### Data Wrangling
 
 - Parse the two-row FBref CSV header.
-- Distinguish overall Save% from penalty-kick Save%.
-- Clean squad names.
-- Retain required goalkeeping variables.
-- Tournament progression classification still required.
+- Select the overall Performance Save% rather than Penalty Kicks Save%.
+- Remove the two- or three-letter leading lowercase FBref country prefix from each squad name.
+- Explicitly harmonise `Bosnia–Herz` to `Bosnia and Herzegovina` for cross-source matching; do not use fuzzy matching or automatic guessing.
+- Classify teams using FIFA Round of 32 membership and create `ProgressionStatus`.
+- Retain Squad, MP, Min, SoTA, Saves, Save%, and ProgressionStatus.
+- Validate 32 progressed teams, 16 group-stage-eliminated teams, and 48 teams in total before analysis.
 
 ### Descriptive Statistics
 
@@ -179,7 +181,7 @@ The 48 participating teams represented by the FBref squad goalkeeping dataset.
 
 ### Assumptions
 
-To be checked after tournament progression groups are created.
+[To be checked before inferential analysis.]
 
 ### Interpretation
 

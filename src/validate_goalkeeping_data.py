@@ -64,7 +64,7 @@ def main():
     goalkeeping["Squad"] = (
         goalkeeping["Squad"]
         .astype("string")
-        .str.replace(r"^[a-z]{2}\s+", "", regex=True)
+        .str.replace(r"^[a-z]{2,3}\s+", "", regex=True)
     )
 
     for column in SELECTED_COLUMNS[1:]:
