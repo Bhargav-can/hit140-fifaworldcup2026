@@ -189,7 +189,25 @@ For the difference in means (Progressed minus Group-stage eliminated), the stand
 
 ### Hypothesis Test
 
-Not yet completed.
+#### State
+
+- Null hypothesis: H0: mu_progressed = mu_eliminated.
+- Alternative hypothesis: H1: mu_progressed > mu_eliminated.
+- Significance level: alpha = 0.05.
+
+#### Plan
+
+An independent two-sample t-test was used. The response variable was goalkeeper Save%, the grouping variable was `ProgressionStatus`, and the alternative was one-sided because the research question asked whether the mean for Progressed teams was higher. The Week 4 conservative degrees-of-freedom method was used: `df = min(n1 - 1, n2 - 1) = min(31, 15) = 15`.
+
+The already-checked conditions showed 32 Progressed teams and 16 group-stage-eliminated teams, mild skewness of -0.22 and -0.12 respectively, and no 1.5 × IQR outliers in either group. However, the simple random sampling condition was not satisfied because all 48 World Cup teams were included rather than a random sample. Inferential conclusions must therefore be interpreted cautiously and mainly in the context of the 2026 FIFA World Cup teams.
+
+#### Solve
+
+The Progressed mean was 67.99%, and the group-stage-eliminated mean was 58.53%. The observed mean difference (Progressed minus Group-stage eliminated) was 9.46 percentage points. Using `sqrt((s1^2 / n1) + (s2^2 / n2))`, the standard error was 4.13 percentage points. The test statistic was `t = 2.2934`, with `df = 15`. The upper-tail p-value calculated using `scipy.stats.t.sf(t_statistic, df)` was 0.0183. The previously calculated 95% confidence interval for the difference was retained as [0.67, 18.26] percentage points.
+
+#### Conclude
+
+The one-sided p-value of 0.0183 is less than alpha = 0.05, so H0 is rejected. There is evidence that, among the 2026 FIFA World Cup teams, teams that progressed beyond the group stage had a higher mean goalkeeper Save% than teams eliminated in the group stage. This result shows an association and does not establish causation. Because the teams were not selected by simple random sampling, the conclusion should not be broadly generalized beyond the 2026 FIFA World Cup context.
 
 ### Assumptions
 
@@ -200,8 +218,10 @@ Not yet completed.
 
 ### Interpretation
 
-[To be completed after analysis.]
+Progressed teams had a mean goalkeeper Save% 9.46 percentage points higher than group-stage-eliminated teams. The one-sided independent two-sample t-test provided evidence of a higher mean for Progressed teams (`t = 2.2934`, `df = 15`, `p = 0.0183`) at the 0.05 significance level. This evidence is specific mainly to the teams in the 2026 FIFA World Cup and does not show that progression causes higher Save%.
 
 ### Limitations
 
-[To be identified.]
+- The teams were not selected by simple random sampling; all 48 participating teams were included.
+- The results describe and compare the 2026 FIFA World Cup teams and should not be broadly generalized to other tournaments, teams, or settings.
+- Save% is associated with many factors, including opposition quality and shots faced, so the result does not establish that progression causes higher Save%.

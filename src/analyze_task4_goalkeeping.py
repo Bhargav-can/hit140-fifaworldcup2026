@@ -98,6 +98,36 @@ def calculate_difference_confidence_interval(
     }
 
 
+def calculate_two_sample_t_test(
+    progressed_save_percentages, eliminated_save_percentages
+):
+    """Calculate the directional Week 4 independent two-sample t-test."""
+    progressed_n = progressed_save_percentages.count()
+    eliminated_n = eliminated_save_percentages.count()
+    progressed_mean = progressed_save_percentages.mean()
+    eliminated_mean = eliminated_save_percentages.mean()
+    mean_difference = progressed_mean - eliminated_mean
+    standard_error = (
+        progressed_save_percentages.var() / progressed_n
+        + eliminated_save_percentages.var() / eliminated_n
+    ) ** 0.5
+    t_statistic = mean_difference / standard_error
+
+    # Week 4 uses the smaller group's degrees of freedom as a conservative value.
+    degrees_of_freedom = min(progressed_n - 1, eliminated_n - 1)
+    p_value = t.sf(t_statistic, degrees_of_freedom)
+
+    return {
+        "progressed mean": progressed_mean,
+        "eliminated mean": eliminated_mean,
+        "mean difference": mean_difference,
+        "standard error": standard_error,
+        "t statistic": t_statistic,
+        "degrees of freedom": degrees_of_freedom,
+        "p-value": p_value,
+    }
+
+
 def print_mean_confidence_interval(status, confidence_interval):
     """Print the components of a confidence interval for one group mean."""
     print(f"\n{status}:")
@@ -293,6 +323,82 @@ def main():
     print(
         "95% CI upper bound: "
         f"{difference_confidence_interval['upper bound']:.2f} percentage points"
+    )
+
+    alpha = 0.05
+    test_results = calculate_two_sample_t_test(
+        progressed_save_percentages, eliminated_save_percentages
+    )
+
+    print("\nSTATE")
+    print("H0: mu_progressed = mu_eliminated")
+    print("H1: mu_progressed > mu_eliminated")
+    print(f"Significance level: alpha = {alpha:.2f}")
+
+    print("\nPLAN")
+    print("Test: independent two-sample t-test")
+    print("Response variable: goalkeeper Save%")
+    print("Grouping variable: ProgressionStatus")
+    print("Alternative: one-sided (Progressed mean > Eliminated mean)")
+    print(
+        "Degrees of freedom: conservative Week 4 method, "
+        "df = min(n1 - 1, n2 - 1)"
+    )
+    print("Checked conditions:")
+    print("- Progressed n = 32; skewness = -0.22; no 1.5 x IQR outliers")
+    print(
+        "- Group-stage eliminated n = 16; skewness = -0.12; "
+        "no 1.5 x IQR outliers"
+    )
+    print(
+        "- Simple random sampling condition is not satisfied because all 48 "
+        "World Cup teams were included rather than a random sample"
+    )
+    print(
+        "- Inferential conclusions must therefore be interpreted cautiously "
+        "and mainly in the context of the 2026 FIFA World Cup teams"
+    )
+
+    print("\nSOLVE")
+    print(f"Progressed mean: {test_results['progressed mean']:.2f}%")
+    print(f"Eliminated mean: {test_results['eliminated mean']:.2f}%")
+    print(
+        "Observed mean difference (Progressed - Eliminated): "
+        f"{test_results['mean difference']:.2f} percentage points"
+    )
+    print(f"Standard error: {test_results['standard error']:.2f}")
+    print(f"t statistic: {test_results['t statistic']:.4f}")
+    print(f"df: {test_results['degrees of freedom']}")
+    print(f"One-sided p-value: {test_results['p-value']:.4f}")
+    print("Previously calculated 95% CI: [0.67, 18.26] percentage points")
+
+    print("\nCONCLUDE")
+    if test_results["p-value"] < alpha:
+        print(
+            f"The one-sided p-value ({test_results['p-value']:.4f}) is less "
+            f"than alpha ({alpha:.2f}), so H0 is rejected."
+        )
+        print(
+            "There is evidence that, among the 2026 FIFA World Cup teams, "
+            "teams that progressed beyond the group stage had a higher mean "
+            "goalkeeper Save% than teams eliminated in the group stage."
+        )
+    else:
+        print(
+            f"The one-sided p-value ({test_results['p-value']:.4f}) is not "
+            f"less than alpha ({alpha:.2f}), so H0 is not rejected."
+        )
+        print(
+            "There is not sufficient evidence that, among the 2026 FIFA "
+            "World Cup teams, teams that progressed beyond the group stage "
+            "had a higher mean goalkeeper Save% than teams eliminated in the "
+            "group stage."
+        )
+    print(
+        "This is an association, not evidence that progression causes a "
+        "higher Save%. Because the teams were not selected by simple random "
+        "sampling, the conclusion should not be broadly generalized beyond "
+        "the 2026 FIFA World Cup context."
     )
 
     create_figures(progressed_save_percentages, eliminated_save_percentages)
