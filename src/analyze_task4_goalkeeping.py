@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 from scipy.stats import t
 
@@ -178,17 +179,27 @@ def create_figures(progressed_save_percentages, eliminated_save_percentages):
     plt.savefig(BOXPLOT_PATH, dpi=300)
     plt.close()
 
+    minimum_save_percentage = min(
+        progressed_save_percentages.min(), eliminated_save_percentages.min()
+    )
+    maximum_save_percentage = max(
+        progressed_save_percentages.max(), eliminated_save_percentages.max()
+    )
+    histogram_bin_edges = np.linspace(
+        minimum_save_percentage, maximum_save_percentage, 9
+    )
+
     plt.figure(figsize=(8, 5))
     plt.hist(
         progressed_save_percentages,
-        bins=8,
+        bins=histogram_bin_edges,
         alpha=0.65,
         label=PROGRESSED,
         edgecolor="black",
     )
     plt.hist(
         eliminated_save_percentages,
-        bins=8,
+        bins=histogram_bin_edges,
         alpha=0.65,
         label=ELIMINATED,
         edgecolor="black",
