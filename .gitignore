@@ -219,3 +219,4 @@ __marimo__/
 
 # Ignore all data files
 data/
+.DS_Store
