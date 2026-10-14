@@ -1,0 +1,352 @@
+{
+  "table_21": [
+    {
+      "model": "Mean baseline",
+      "family": "Baseline",
+      "RMSE": 2.0145,
+      "RMSE_sd": 0.0298,
+      "MAE": 1.589,
+      "R2": -0.0683,
+      "beats_baseline_pct": 0.0,
+      "gain_vs_baseline_pct": 0.0
+    },
+    {
+      "model": "OLS, all 8",
+      "family": "Linear (OLS)",
+      "RMSE": 1.603,
+      "RMSE_sd": 0.033,
+      "MAE": 1.256,
+      "R2": 0.2991,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 20.4294
+    },
+    {
+      "model": "OLS, collinear pair removed",
+      "family": "Linear (OLS)",
+      "RMSE": 1.591,
+      "RMSE_sd": 0.0312,
+      "MAE": 1.2628,
+      "R2": 0.3131,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 21.024
+    },
+    {
+      "model": "OLS, Yeo-Johnson",
+      "family": "Linear (OLS)",
+      "RMSE": 1.6093,
+      "RMSE_sd": 0.0315,
+      "MAE": 1.2629,
+      "R2": 0.2923,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 20.1167
+    },
+    {
+      "model": "OLS, log MV + exp. (kept)",
+      "family": "Linear (OLS)",
+      "RMSE": 1.542,
+      "RMSE_sd": 0.0326,
+      "MAE": 1.2101,
+      "R2": 0.3501,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 23.4547
+    },
+    {
+      "model": "OLS, logs chosen in inner CV",
+      "family": "Linear (OLS)",
+      "RMSE": 1.5776,
+      "RMSE_sd": 0.0404,
+      "MAE": 1.2378,
+      "R2": 0.3212,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 21.688
+    },
+    {
+      "model": "OLS, FIFA points only",
+      "family": "Linear (OLS)",
+      "RMSE": 1.5463,
+      "RMSE_sd": 0.019,
+      "MAE": 1.22,
+      "R2": 0.3545,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 23.2413
+    },
+    {
+      "model": "Ridge (alpha by CV)",
+      "family": "Regularised linear",
+      "RMSE": 1.5258,
+      "RMSE_sd": 0.0245,
+      "MAE": 1.1804,
+      "R2": 0.3735,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 24.2614
+    },
+    {
+      "model": "Lasso (alpha by CV)",
+      "family": "Regularised linear",
+      "RMSE": 1.5464,
+      "RMSE_sd": 0.0327,
+      "MAE": 1.2015,
+      "R2": 0.359,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 23.239
+    },
+    {
+      "model": "Huber (robust)",
+      "family": "Robust linear",
+      "RMSE": 1.547,
+      "RMSE_sd": 0.0339,
+      "MAE": 1.2317,
+      "R2": 0.3465,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 23.2086
+    },
+    {
+      "model": "Random forest",
+      "family": "Non-linear check",
+      "RMSE": 1.5997,
+      "RMSE_sd": 0.0304,
+      "MAE": 1.2422,
+      "R2": 0.3066,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 20.5924
+    }
+  ],
+  "table_22": [
+    {
+      "model": "Mean baseline",
+      "family": "Baseline",
+      "RMSE": 1.3855,
+      "RMSE_sd": 0.0049,
+      "MAE": 1.1146,
+      "R2": -0.0264,
+      "beats_baseline_pct": 0.0,
+      "gain_vs_baseline_pct": 0.0
+    },
+    {
+      "model": "OLS, all 8",
+      "family": "Linear (OLS)",
+      "RMSE": 1.3613,
+      "RMSE_sd": 0.0205,
+      "MAE": 1.0666,
+      "R2": 0.0002,
+      "beats_baseline_pct": 95.0,
+      "gain_vs_baseline_pct": 1.7501
+    },
+    {
+      "model": "OLS, Yeo-Johnson",
+      "family": "Linear (OLS)",
+      "RMSE": 1.3654,
+      "RMSE_sd": 0.018,
+      "MAE": 1.0773,
+      "R2": -0.0037,
+      "beats_baseline_pct": 90.0,
+      "gain_vs_baseline_pct": 1.4566
+    },
+    {
+      "model": "OLS, log qual. GF (kept)",
+      "family": "Linear (OLS)",
+      "RMSE": 1.3585,
+      "RMSE_sd": 0.02,
+      "MAE": 1.0646,
+      "R2": 0.004,
+      "beats_baseline_pct": 95.0,
+      "gain_vs_baseline_pct": 1.9487
+    },
+    {
+      "model": "OLS, logs chosen in inner CV",
+      "family": "Linear (OLS)",
+      "RMSE": 1.3692,
+      "RMSE_sd": 0.0216,
+      "MAE": 1.073,
+      "R2": -0.0121,
+      "beats_baseline_pct": 80.0,
+      "gain_vs_baseline_pct": 1.1803
+    },
+    {
+      "model": "OLS, 2 qualifying rates",
+      "family": "Linear (OLS)",
+      "RMSE": 1.3475,
+      "RMSE_sd": 0.0117,
+      "MAE": 1.0718,
+      "R2": 0.0273,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 2.7474
+    },
+    {
+      "model": "Ridge (alpha by CV)",
+      "family": "Regularised linear",
+      "RMSE": 1.3531,
+      "RMSE_sd": 0.0159,
+      "MAE": 1.0705,
+      "R2": 0.0183,
+      "beats_baseline_pct": 95.0,
+      "gain_vs_baseline_pct": 2.3382
+    },
+    {
+      "model": "Lasso (alpha by CV)",
+      "family": "Regularised linear",
+      "RMSE": 1.359,
+      "RMSE_sd": 0.0156,
+      "MAE": 1.0737,
+      "R2": 0.0111,
+      "beats_baseline_pct": 95.0,
+      "gain_vs_baseline_pct": 1.9169
+    },
+    {
+      "model": "Huber (robust)",
+      "family": "Robust linear",
+      "RMSE": 1.3666,
+      "RMSE_sd": 0.0207,
+      "MAE": 1.0524,
+      "R2": -0.0062,
+      "beats_baseline_pct": 85.0,
+      "gain_vs_baseline_pct": 1.3641
+    },
+    {
+      "model": "Poisson GLM",
+      "family": "Count model",
+      "RMSE": 1.3601,
+      "RMSE_sd": 0.0229,
+      "MAE": 1.0584,
+      "R2": -0.0029,
+      "beats_baseline_pct": 90.0,
+      "gain_vs_baseline_pct": 1.8338
+    },
+    {
+      "model": "Random forest",
+      "family": "Non-linear check",
+      "RMSE": 1.3454,
+      "RMSE_sd": 0.02,
+      "MAE": 1.0301,
+      "R2": 0.0269,
+      "beats_baseline_pct": 100.0,
+      "gain_vs_baseline_pct": 2.8974
+    }
+  ],
+  "ungrouped_22": {
+    "Mean baseline": 1.3887507708383737,
+    "OLS, log qual. GF (kept)": 1.369408039786364
+  },
+  "paired": {
+    "21_kept_vs_all8": {
+      "mean_diff": -0.06094415464681052,
+      "a_better_pct": 100.0
+    },
+    "21_fifa_vs_kept": {
+      "mean_diff": 0.004298435008461265,
+      "a_better_pct": 45.0
+    },
+    "21_ridge_vs_kept": {
+      "mean_diff": -0.01625039643599544,
+      "a_better_pct": 90.0
+    },
+    "21_nested_vs_kept": {
+      "mean_diff": 0.0355902375605792,
+      "a_better_pct": 0.0
+    },
+    "22_kept_vs_all8": {
+      "mean_diff": -0.0027520103147715912,
+      "a_better_pct": 80.0
+    },
+    "22_two_vs_kept": {
+      "mean_diff": -0.011066595633293453,
+      "a_better_pct": 70.0
+    },
+    "22_pois_vs_kept": {
+      "mean_diff": 0.0015924115124801407,
+      "a_better_pct": 40.0
+    },
+    "22_kept_vs_base": {
+      "mean_diff": -0.026999958835693193,
+      "a_better_pct": 95.0
+    }
+  },
+  "winner": {
+    "model_pct": 87.5,
+    "fifa_pct": 85.0,
+    "decided": 80,
+    "within1_pct": 47.11538461538461
+  },
+  "coefficients": {
+    "2.1": {
+      "r2": 0.5079879833236742,
+      "adj_r2": 0.4665553924456678,
+      "coef": {
+        "fifa_points_diff": 0.5970473741707943,
+        "qual_gd_per_game_diff": 0.23639236088362767,
+        "age_avg_diff": 0.23192932289262355,
+        "host": 0.3687571305455056,
+        "rest_days_diff": 0.049247628808169575,
+        "wc_gd_so_far": -0.14950142532327637,
+        "slog_market_value": 0.6820486994207352,
+        "slog_wc_experience": 0.2646107105975388
+      },
+      "p": {
+        "fifa_points_diff": 0.031987087851199206,
+        "qual_gd_per_game_diff": 0.14973969355617406,
+        "age_avg_diff": 0.16649748331418723,
+        "host": 0.03531287745166463,
+        "rest_days_diff": 0.7394557031275104,
+        "wc_gd_so_far": 0.38590895758518473,
+        "slog_market_value": 0.019063077495244975,
+        "slog_wc_experience": 0.3209146835997795
+      }
+    },
+    "2.2": {
+      "r2": 0.13519438280130947,
+      "adj_r2": 0.10042832783854805,
+      "coef": {
+        "log_qual_gf": 0.3866782496214134,
+        "opp_qual_ga_per_game": 0.1485952390666674,
+        "wc_goals_so_far": -0.0946519131538244,
+        "opp_wc_ga_so_far": 0.23852527641108118,
+        "foreigners_pct": -0.03223684081591822,
+        "opp_foreigners_pct": -0.05459693335601565,
+        "squad_size": 0.24339775391292964,
+        "opp_squad_size": -0.028362977691215364
+      },
+      "p": {
+        "log_qual_gf": 6.921356166717871e-05,
+        "opp_qual_ga_per_game": 0.11086422211006722,
+        "wc_goals_so_far": 0.34699280428461504,
+        "opp_wc_ga_so_far": 0.012229282670478396,
+        "foreigners_pct": 0.7321032815274341,
+        "opp_foreigners_pct": 0.564764362009493,
+        "squad_size": 0.012500502199695025,
+        "opp_squad_size": 0.7628044426352766
+      }
+    }
+  },
+  "diagnostics": {
+    "bp_p_21": 0.29829443848273185,
+    "bp_p_22": 0.07952527239296556,
+    "shapiro_p_21": 0.11695700477926496,
+    "shapiro_p_22": 9.565756282577405e-07,
+    "max_vif_21": 3.658837923754677,
+    "goals_mean": 1.4807692307692308,
+    "goals_var": 1.9416573764399851,
+    "draws": 24
+  },
+  "scorelines": {
+    "observed": [
+      55,
+      71,
+      39,
+      25,
+      10,
+      5,
+      2,
+      1
+    ],
+    "expected": [
+      53.97821517592641,
+      66.95373534618668,
+      46.480901037102264,
+      24.01400190575039,
+      10.384423171265404,
+      4.011918624573353,
+      1.441979862813596,
+      0.7348248763819155
+    ]
+  }
+}
